@@ -12,15 +12,14 @@ Features:
 File Structure:
 
 event-management-booking/
-â
-âââ index.html             # Login page
-âââ create_booking.html    # Create booking page
-âââ invoice.html           # Invoice page
-âââ welcome.html           # Welcome page
-â
-âââ styles.css             # CSS styles for the website
-âââ create_booking.js      # JavaScript for create booking functionality
-âââ invoice.js             # JavaScript for invoice page functionality
+ index.html             # Login page
+ create_booking.html    # Create booking page
+invoice.html           # Invoice page
+welcome.html           # Welcome page
+
+ styles.css             # CSS styles for the website
+ create_booking.js      # JavaScript for create booking functionality
+ invoice.js             # JavaScript for invoice page functionality
 
 Usage:
 
