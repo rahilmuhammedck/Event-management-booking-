@@ -1,29 +1,23 @@
+// create_booking.js
 document.addEventListener('DOMContentLoaded', function () {
     const createBookingForm = document.getElementById('createBookingForm');
 
     createBookingForm.addEventListener('submit', function (event) {
-        event.preventDefault();
+        event.preventDefault(); // Prevent form submission
 
-        // Retrieve form data
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const address = document.getElementById('address').value;
-        const eventType = document.getElementById('eventType').value;
-
-        // Create booking object
-        const bookingData = {
-            name: name,
-            email: email,
-            phone: phone,
-            address: address,
-            eventType: eventType
+        // Get form data
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            address: document.getElementById('address').value,
+            eventType: document.getElementById('eventType').value
         };
 
-        // Store data in localStorage
-        localStorage.setItem('bookingData', JSON.stringify(bookingData));
+        // Store form data in local storage
+        localStorage.setItem('bookingData', JSON.stringify(formData));
 
-        // Redirect to invoice page
+        // Redirect to the invoice page
         window.location.href = 'invoice.html';
     });
 });
