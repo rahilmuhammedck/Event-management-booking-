@@ -1,24 +1,35 @@
+// invoice.js
 document.addEventListener('DOMContentLoaded', function () {
-    // Retrieve booking data from localStorage
-    const userData = JSON.parse(localStorage.getItem('userData'));
+    // Function to retrieve booking data from local storage and populate the invoice content
+    function populateInvoice() {
+        // Retrieve booking data from local storage
+        const bookingData = JSON.parse(localStorage.getItem('bookingData'));
 
-    // Generate invoice content
-    const invoiceContent = `
-        <p><strong>Name:</strong> ${userData.name}</p>
-        <p><strong>Email:</strong> ${userData.email}</p>
-        <p><strong>Phone:</strong> ${userData.phone}</p>
-        <p><strong>Address:</strong> ${userData.address}</p>
-        <p><strong>Event Type:</strong> ${userData.eventType}</p>
-        <!-- Add more details as needed -->
-    `;
+        // Check if booking data exists
+        if (bookingData) {
+            // Construct invoice HTML content using booking data
+            const invoiceHTML = `
+                <div class="invoice">
+                    <div><strong>Name:</strong> ${bookingData.name}</div>
+                    <div><strong>Email:</strong> ${bookingData.email}</div>
+                    <div><strong>Phone:</strong> ${bookingData.phone}</div>
+                    <div><strong>Address:</strong> ${bookingData.address}</div>
+                    <div><strong>Event Type:</strong> ${bookingData.eventType}</div>
+                </div>
+            `;
 
-    // Display invoice content on the page
-    const invoiceDetails = document.getElementById('invoiceDetails');
-    invoiceDetails.innerHTML = invoiceContent;
+            // Insert invoice HTML into the invoiceDetails container
+            const invoiceDetailsContainer = document.getElementById('invoiceDetails');
+            invoiceDetailsContainer.innerHTML = invoiceHTML;
+        }
+    }
 
-    // Add event listener to print button
-    const printButton = document.getElementById('printButton');
-    printButton.addEventListener('click', function () {
-        window.print();
+    // Event listener for the "Print Invoice" button
+    const printInvoiceBtn = document.getElementById('printInvoiceBtn');
+    printInvoiceBtn.addEventListener('click', function () {
+        window.print(); // Open print dialog
     });
+
+    // Populate invoice with booking data when the page loads
+    populateInvoice();
 });
