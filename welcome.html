@@ -8,15 +8,17 @@
 </head>
 <body class="welcome-bg">
     <div class="container">
-        <h2>Welcome to Event Management Booking</h2>
-        <p>Please click the button below to create a booking:</p>
-        <button onclick="redirectToCreateBookingPage()">Create Booking</button>
+        <h2>Welcome</h2>
+        <p>Select an event type:</p>
+        <select id="eventType">
+            <option value="">Select Event Type</option>
+            <option value="wedding">Wedding (Starting from 200k)</option>
+            <option value="birthday">Birthday (Starting from 30k)</option>
+            <option value="other">Other (Starting from 50k)</option>
+        </select>
+        <button id="viewPricingBtn">View Pricing</button>
     </div>
 
-    <script>
-        function redirectToCreateBookingPage() {
-            window.location.href = 'create_booking.html';
-        }
-    </script>
+    <script src="welcome.js"></script>
 </body>
 </html>
