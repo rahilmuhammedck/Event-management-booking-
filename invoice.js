@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div><strong>Phone:</strong> ${bookingData.phone}</div>
                     <div><strong>Address:</strong> ${bookingData.address}</div>
                     <div><strong>Event Type:</strong> ${bookingData.eventType}</div>
+                    <!-- Add more fields as needed -->
                 </div>
             `;
 
